@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# 功能：获取当前占用CPU最高的java进程，并将java进程里占CPU最高的线程栈打印出来
+# @author:liangguanglong
+#
 
 # 1.找到高负载的进程
 topPid=$(pidstat 2 1 | grep Average | sort -k 7 -n -r | head -1 | awk '{print $3}')
